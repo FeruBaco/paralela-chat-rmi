@@ -6,11 +6,14 @@ import java.rmi.registry.Registry;
 
 public class RMIServer {
   public static void main(String[] args)   {
+
+    final int PORT = 1005;
+
     try {
-      Registry rmi = LocateRegistry.createRegistry(1005);
+      Registry rmi = LocateRegistry.createRegistry(PORT);
 
       rmi.rebind("Chat", (Remote) new ChatImp());
-      System.out.println("Servidor activo");
+      System.out.println("Servidor activo " + PORT);
     } catch (Exception e) {
       e.printStackTrace();
     }

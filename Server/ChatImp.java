@@ -17,6 +17,7 @@ public class ChatImp extends UnicastRemoteObject implements ServerChat{
 
   @Override
   public void register(ClientChat client) throws RemoteException {
+    System.out.println("Conected: " + client);
     this.clients.add(client);
     
   }
